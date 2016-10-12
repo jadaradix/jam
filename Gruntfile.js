@@ -1,5 +1,8 @@
-const input = "src/js/index.js";
-const output = "dist/js/index.js";
+const javaScriptInput = "src/js/index.js";
+const javaScriptOutput = "dist/index.js";
+
+const sassInput = "src/sass/index.scss";
+const sassOutput = "dist/index.css";
 
 const transform = [
   ["babelify",
@@ -13,6 +16,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks("grunt-browserify");
   grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-sass");
 
   grunt.initConfig({
 
@@ -20,15 +24,15 @@ module.exports = function (grunt) {
 
     browserify: {
       once: {
-        src: input,
-        dest: output,
+        src: javaScriptInput,
+        dest: javaScriptOutput,
         options: {
           transform: transform
         }
       },
       watch: {
-        src: input,
-        dest: output,
+        src: javaScriptInput,
+        dest: javaScriptOutput,
         options: {
           transform: transform,
           watch: true,
@@ -42,11 +46,24 @@ module.exports = function (grunt) {
         mangle: false
       },
       once: {
-        files: ((output) => {
+        files: ((javaScriptOutput) => {
           let o = {};
-          o[output] = output;
+          o[javaScriptOutput] = javaScriptOutput;
           return o;
-        })
+        })(javaScriptOutput)
+      }
+    },
+
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: ((sassInput, sassOutput) => {
+          let o = {};
+          o[sassOutput] = sassInput;
+          return o;
+        })(sassInput, sassOutput)
       }
     }
 
@@ -54,7 +71,8 @@ module.exports = function (grunt) {
 
   return grunt.registerTask("default", [
     "browserify:once",
-    "uglify:once"
+    "uglify:once",
+    "sass"
   ]);
 
 };
