@@ -2,7 +2,7 @@
 // JavaScript
 //
 
-const javaScriptInputDirectory = "src/js/*";
+const javaScriptInputDirectory = "src/js/**";
 const javaScriptInput = "src/js/index.js";
 const javaScriptOutput = "dist/index.js";
 
@@ -16,7 +16,7 @@ const uglifyFiles = ((javaScriptOutput) => {
 // Sass
 //
 
-const sassInputDirectory = "src/sass/*";
+const sassInputDirectory = "src/sass/**";
 const sassInput = "src/sass/index.scss";
 const sassOutput = "dist/index.css";
 
