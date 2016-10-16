@@ -1,4 +1,8 @@
 {
+  "name": "jam",
+  "version": "1.0.0",
+  "license": "UNLICENSE",
+  "author": "James Garner <j@jada.io>",
   "dependencies": {
     "angular": "^1.5.8",
     "babel-preset-es2015": "^6.16.0",
