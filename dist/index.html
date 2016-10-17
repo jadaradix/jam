@@ -19,8 +19,7 @@
         <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
       </section>
       <section>
-        <label for="currentAd">Ad:</label>
-        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
+        <div ng-bind-html="currentAd.html"></div>
       </section>
     </main>
 

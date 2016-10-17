@@ -10,6 +10,7 @@ const Ad = {
   name: "",
   width: 300,
   height: 250,
+  html: "",
   components: [],
   addComponent: function addComponent (component) {
     this.components.push(component);
@@ -19,11 +20,15 @@ const Ad = {
     this.components = this.components.concat(components);
     return this;
   },
+  updateHtml: function updateHtml (html) {
+    this.html = html;
+  },
   getHtml: function getHtml (product) {
     let markup =
     `
       <div
         style="
+          position: relative;
           width: {{ad.width}}px;
           height: {{ad.height}}px;
           border: 1px solid black;
