@@ -6,7 +6,7 @@ const AdComponentProperties = require("../AdComponentProperties");
 const Square = Object.create(AdComponent);
 
 Square.name = "Square";
-Square.addProperties([
+Square.setProperties([
   Object.create(AdComponentProperties.BackgroundColour)
 ]);
 Square.markup =

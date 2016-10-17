@@ -6,7 +6,7 @@ const AdComponentProperties = require("../AdComponentProperties");
 const ProductInfoBox = Object.create(AdComponent);
 
 ProductInfoBox.name = "Product Info Box";
-ProductInfoBox.addProperties([
+ProductInfoBox.setProperties([
   Object.create(AdComponentProperties.BackgroundColour),
   Object.create(AdComponentProperties.Colour)
 ]);

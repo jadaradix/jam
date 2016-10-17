@@ -16,6 +16,13 @@ const AdComponent = {
     });
     return this;
   },
+  setProperties: function setProperties (properties) {
+    this.properties = {};
+    properties.forEach(property => {
+      this.properties[property.inCodeName] = property;
+    });
+    return this;
+  },
   getHtml: function getHtml (ad, product) {
     const template = handlebars.compile(this.markup);
     return template({

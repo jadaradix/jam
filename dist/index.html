@@ -18,7 +18,7 @@
       <!-- CHOOSE AD -->
       <section>
         <label for="currentAd">Ad:</label>
-        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
+        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0" ng-change="updateHtml()"></select>
       </section>
 
       <!-- CONFIGURE AD -->
@@ -27,7 +27,7 @@
           <h2>{{component.name}}</h2>
           <div ng-repeat="(key, property) in component.properties">
             <label for="currentAd-component-{{component.name}}-property-{{property.name}}">{{property.name}}</label>
-            <input id="currentAd-component-{{component.name}}-property-{{property.name}}" type="text" ng-model="property.value">
+            <input id="currentAd-component-{{component.name}}-property-{{property.name}}" type="text" ng-model="property.value" ng-change="updateHtml()">
           </div>
         </div>
       </section>

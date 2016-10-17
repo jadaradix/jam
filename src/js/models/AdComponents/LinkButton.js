@@ -6,7 +6,7 @@ const AdComponentProperties = require("../AdComponentProperties");
 const LinkButton = Object.create(AdComponent);
 
 LinkButton.name = "Link Button";
-LinkButton.addProperties([
+LinkButton.setProperties([
   Object.create(AdComponentProperties.BackgroundColour),
   Object.create(AdComponentProperties.Colour)
 ]);
