@@ -14,12 +14,38 @@
     </header>
 
     <main ng-controller="mainController">
+
+      <!-- CHOOSE AD -->
       <section>
         <label for="currentAd">Ad:</label>
         <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
       </section>
+
+      <!-- CONFIGURE AD -->
       <section>
+        <div ng-repeat="component in currentAd.components">
+          <h2>{{component.name}}</h2>
+          <div ng-repeat="(key, property) in component.properties">
+            <label for="currentAd-component-{{component.name}}-property-{{property.name}}">{{property.name}}</label>
+            <input id="currentAd-component-{{component.name}}-property-{{property.name}}" type="text" ng-model="property.value">
+          </div>
+        </div>
+      </section>
+
+      <!-- DISPLAY AD -->
+      <section class="ads">
         <div ng-bind-html="currentAd.html"></div>
+        <textarea>
+          <!doctype html>
+          <html>
+            <head>
+              <title></title>
+            </head>
+            <body>
+              {{currentAd.html}}
+            </body>
+          </html>
+        </textarea>
       </section>
     </main>
 
