@@ -9,6 +9,16 @@ Square.name = "Square";
 Square.addProperties([
   Object.create(AdComponentProperties.BackgroundColour)
 ]);
-Square.markup = `div(stylex="width: 32px; height: 32px; position: absolute; top: 0; left: 0; background-color: #{component.properties.backgroundColour.value};")`;
+Square.markup =
+`<div
+  style="
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: {{component.properties.backgroundColour.value}};
+  "
+></div>`;
 
 module.exports = Square;

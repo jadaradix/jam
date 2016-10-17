@@ -1,6 +1,6 @@
 "use strict";
 
-const pug = require("pug");
+const handlebars = require("handlebars");
 
 const AdComponent = {
   name: "",
@@ -17,13 +17,11 @@ const AdComponent = {
     return this;
   },
   getHtml: function getHtml (ad, product) {
-    console.log(this.markup);
-    const pugFunction = pug.compile(this.markup);
-    const component = this;
-    return pugFunction({
-      ad,
-      component,
-      product
+    const template = handlebars.compile(this.markup);
+    return template({
+      "ad": ad,
+      "component": this,
+      "product": product
     });
   }
 };
