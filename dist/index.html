@@ -1,19 +1,27 @@
 <html>
   <head>
 
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
   </head>
-  <body ng-app="app">
+  <body ng-app="app" ng-cloak>
 
     <header>
-      <h1>Jimbo&rsquo;s Ad Maker</h1>
       <img src="images/logo.png">
+      <h1>Jimbo&rsquo;s Ad Maker</h1>
     </header>
 
     <main ng-controller="mainController">
-      <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
+      <section>
+        <label for="currentAd">Ad:</label>
+        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
+      </section>
+      <section>
+        <label for="currentAd">Ad:</label>
+        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0"></select>
+      </section>
     </main>
 
   </body>

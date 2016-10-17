@@ -1,11 +1,12 @@
 "use strict";
 
-const Ad = require("../models/Ad.js");
+const OldStyle = require("../models/Ads/OldStyle.js");
+const NewStyle = require("../models/Ads/NewStyle.js");
 
 const factory = function factory () {
   return [
-    new Ad("Old Style"),
-    new Ad("New Style")
+    Object.create(OldStyle),
+    Object.create(NewStyle)
   ];
 };
 

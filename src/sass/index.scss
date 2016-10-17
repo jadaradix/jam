@@ -1,7 +1,4 @@
-$color-background: #311b50;
-$color-foreground: white;
-
-body {
-  background-color: $color-background;
-  color: $color-foreground;
-}
+@import "_settings.scss";
+@import "_core.scss";
+@import "_header.scss";
+@import "_main.scss";

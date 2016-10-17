@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $colour-background;
+  font: $font-size $font-family;
+  color: $colour-foreground;
+}
+
+section {
+  padding: $spacing;
+}
+
+section:nth-child(odd) {
+  background-color: $colour-hatch-1;
+  color: $colour-hatch-1-foreground;
+}
+
+section:nth-child(even) {
+  background-color: $colour-hatch-2;
+  color: $colour-hatch-2-foreground;
+}
+
+label, input, select {
+  display: block;
+}
+
+input, select {
+  font: $font-size $font-family;
+  padding: ($spacing / 2);
+}

@@ -12,6 +12,7 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^1.2.1",
+    "pug": "^2.0.0-beta6",
     "uglify": "^0.1.5"
   }
 }
