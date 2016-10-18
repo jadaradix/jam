@@ -1,12 +1,12 @@
 "use strict";
 
-const OldStyle = require("../models/Ads/OldStyle.js");
-const NewStyle = require("../models/Ads/NewStyle.js");
+const Image = require("../models/Ads/Image.js");
+const Text = require("../models/Ads/Text.js");
 
 const factory = function factory () {
   return [
-    Object.create(OldStyle),
-    Object.create(NewStyle)
+    Object.create(Image),
+    Object.create(Text)
   ];
 };
 

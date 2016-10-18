@@ -1,15 +1,15 @@
 "use strict";
 
-const Ad = require("../Ad.js");
 const AdComponents = require("../AdComponents");
+const Ad = Object.create(
+  require("../Ad.js")
+);
 
-const OldStyle = Object.create(Ad);
-
-OldStyle.name = "Old Style";
-OldStyle.addComponents([
+Ad.name = "With Image";
+Ad.addComponents([
   Object.create(AdComponents.ProductImage),
   Object.create(AdComponents.ProductInfoBox),
   Object.create(AdComponents.LinkButton)
 ]);
 
-module.exports = OldStyle;
+module.exports = Ad;

@@ -12,6 +12,7 @@ Square.setProperties([
 Square.markup =
 `<div
   style="
+    margin: 0;
     width: 32px;
     height: 32px;
     position: absolute;

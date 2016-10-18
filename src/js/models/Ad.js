@@ -28,6 +28,7 @@ const Ad = {
     `
       <div
         style="
+          font: 12px 'Arial', sans-serif;
           position: relative;
           width: {{ad.width}}px;
           height: {{ad.height}}px;
