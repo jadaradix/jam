@@ -21,7 +21,7 @@ npm install -g yarn
 
 ### Grunt
 
-Grunt is a JavaScript task runner. Install Grunt:
+Grunt is a JavaScript task runner.
 
 ```
 npm install -g grunt-cli
@@ -49,7 +49,7 @@ You can watch for JavaScript and Sass changes and rebuild automatically with the
 
 ## Run
 
-You will need [jam-api](https://github.com/jadaradix/jam-api) to serve products RESTfully. If you don't run this on the default port, the URL to `jam-api` is configurable in `src/js/services/products.js`:
+You will need [jam-api](https://github.com/jadaradix/jam-api) to serve products RESTfully. If you don't run this on the default port, the URL to jam-api is configurable in `src/js/services/products.js`:
 
 ```
 const JAM_API_URL = "http://localhost:8080";
