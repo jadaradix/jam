@@ -2,8 +2,8 @@
 
 const handlebars = require("handlebars");
 
-handlebars.registerHelper("adComponent", function (ad, product, component) {
-  return new handlebars.SafeString(component.getHtml(ad, product));
+handlebars.registerHelper("adComponent", function (ad, products, component) {
+  return new handlebars.SafeString(component.getHtml(ad, products));
 });
 
 const Ad = {
@@ -23,7 +23,7 @@ const Ad = {
   updateHtml: function updateHtml (html) {
     this.html = html;
   },
-  getHtml: function getHtml (product) {
+  getHtml: function getHtml (products) {
     let markup =
     `
       <div
@@ -36,14 +36,14 @@ const Ad = {
         "
       >
         {{#each ad.components}}
-          {{adComponent ../ad ../product this}}
+          {{adComponent ../ad ../products this}}
         {{/each}}
       </div>
     `;
     const template = handlebars.compile(markup);
     return template({
       "ad": this,
-      "product": product
+      "products": products
     });
   }
 };

@@ -26,12 +26,13 @@ const AdComponent = {
   isConfigurable: function isConfigurable () {
     return (Object.keys(this.properties).length > 0);
   },
-  getHtml: function getHtml (ad, product) {
+  getHtml: function getHtml (ad, products) {
     const template = handlebars.compile(this.markup);
     return template({
       "ad": ad,
       "component": this,
-      "product": product
+      "products": products,
+      "product": products[0]
     });
   }
 };
