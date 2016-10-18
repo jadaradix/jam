@@ -1,7 +1,7 @@
 <html>
   <head>
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
@@ -14,16 +14,15 @@
     </header>
 
     <main ng-controller="mainController">
-
-      <!-- CHOOSE AD -->
+      
       <section>
-        <label for="currentAd">Ad:</label>
-        <select id="currentAd" ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0" ng-change="updateHtml()"></select>
-      </section>
-
-      <!-- CONFIGURE AD -->
-      <section>
-        <div ng-repeat="component in currentAd.components">
+        <!-- CHOOSE AD -->
+        <div>
+          <h1>Ad</h1>
+          <select ng-options="ad.name for ad in ads" ng-model="currentAd" ng-disabled="ads.length === 0" ng-change="updateHtml()"></select>
+        </div>
+        <!-- CONFIGURE AD -->
+        <div ng-repeat="component in currentAd.components" ng-if="component.isConfigurable()">
           <h2>{{component.name}}</h2>
           <div ng-repeat="(key, property) in component.properties">
             <label for="currentAd-component-{{component.name}}-property-{{property.name}}">{{property.name}}</label>
@@ -32,20 +31,28 @@
         </div>
       </section>
 
-      <!-- DISPLAY AD -->
+      
       <section class="ads">
-        <div ng-bind-html="currentAd.html"></div>
-        <textarea>
-          <!doctype html>
-          <html>
-            <head>
-              <title></title>
-            </head>
-            <body>
-              {{currentAd.html}}
-            </body>
-          </html>
-        </textarea>
+        <!-- PREVIEW AD -->
+        <div>
+          <h1>Preview</h1>
+          <div class="ad" ng-bind-html="currentAd.html"></div>
+        </div>
+        <!-- GET HTML OF AD -->
+        <div>
+          <h1>HTML</h1>
+          <textarea class="ad preview">
+            <!doctype html>
+            <html>
+              <head>
+                <title></title>
+              </head>
+              <body>
+                {{currentAd.html}}
+              </body>
+            </html>
+          </textarea>
+        </div>
       </section>
     </main>
 

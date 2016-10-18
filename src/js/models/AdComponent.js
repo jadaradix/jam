@@ -23,6 +23,9 @@ const AdComponent = {
     });
     return this;
   },
+  isConfigurable: function isConfigurable () {
+    return (Object.keys(this.properties).length > 0);
+  },
   getHtml: function getHtml (ad, product) {
     const template = handlebars.compile(this.markup);
     return template({
