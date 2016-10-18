@@ -6,6 +6,6 @@ const BackgroundColour = Object.create(AdComponentProperty);
 
 BackgroundColour.name = "Background Colour";
 BackgroundColour.inCodeName = "backgroundColour";
-BackgroundColour.value = "blue";
+BackgroundColour.value = "#311b50";
 
 module.exports = BackgroundColour;

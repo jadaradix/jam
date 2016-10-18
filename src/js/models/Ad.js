@@ -33,6 +33,7 @@ const Ad = {
           width: {{ad.width}}px;
           height: {{ad.height}}px;
           border: 1px solid black;
+          background-color: white;
         "
       >
         {{#each ad.components}}

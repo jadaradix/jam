@@ -10,6 +10,9 @@ ProductImage.setProperties([]);
 ProductImage.markup =
 `<img
   style="
+    display: block;
+    width: 120px;
+    margin: 16px auto 0 auto;
     background-color: black;
   "
   src="{{product.img}}"

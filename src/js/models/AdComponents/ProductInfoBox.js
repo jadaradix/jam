@@ -13,6 +13,8 @@ ProductInfoBox.setProperties([
 ProductInfoBox.markup =
 `<div
   style="
+    margin: 16px 16px 0 16px;
+    padding: 8px;
     background-color: {{component.properties.backgroundColour.value}};
     color: {{component.properties.colour.value}};
   "
