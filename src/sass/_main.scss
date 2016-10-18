@@ -1,8 +1,13 @@
 body > main {
 
   clear: both;
+  padding-top: $header-height + ($spacing * 2);
+  height: 100%;
 
   section {
+    height: 100%;
+    width: 50%;
+    float: left;
     > div:not(:first-child) {
       margin-top: $spacing;
       h1, h2, h3 {
