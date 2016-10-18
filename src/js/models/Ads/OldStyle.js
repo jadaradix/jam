@@ -7,6 +7,7 @@ const OldStyle = Object.create(Ad);
 
 OldStyle.name = "Old Style";
 OldStyle.addComponents([
+  Object.create(AdComponents.ProductImage),
   Object.create(AdComponents.ProductInfoBox),
   Object.create(AdComponents.LinkButton)
 ]);
