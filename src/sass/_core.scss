@@ -10,25 +10,6 @@ body {
   color: $colour-foreground;
 }
 
-section {
-  padding: $spacing;
-}
-
-section:nth-child(odd) {
-  background-color: $colour-hatch-1;
-  color: $colour-hatch-1-foreground;
-}
-
-section:nth-child(even) {
-  background-color: $colour-hatch-2;
-  color: $colour-hatch-2-foreground;
-}
-
-label, input, select {
-  display: block;
-}
-
-input, select {
-  font: $font-size $font-family;
-  padding: ($spacing / 2);
+h1, h2, h3 {
+  font-weight: normal;
 }
