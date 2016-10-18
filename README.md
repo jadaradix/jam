@@ -6,7 +6,9 @@ This project supports multiple ad types (`Ad`s), has a Grunt build pipeline for 
 
 A preview and a full HTML document are produced. Each `Ad` is built from `AdComponents` (`LinkButton`, `ProductImage` and so on), each of which is built from `AdComponentProperty`s, each with a `name` and `value`, which control the `AdComponent`'s appearance.
 
-Class-like components are stored in `src/models`. A factory produces products via a `services/products.js`, a service consuming a HTTP service abstraction `services/http.js` above AngularJS' `$http`. The controller renders the current `Ad`'s HTML to a preview with `ng-bind-html`.
+Class-like components are stored in `src/models`. A factory produces products via a products service `services/products.js`, a service consuming a HTTP service abstraction `services/http.js` above AngularJS' `$http`. This seems like overkill, but a HTTP service abstraction above `$http` is highly beneficial for readability in its consumers.
+
+The controller renders the current `Ad`'s HTML to a preview with `ng-bind-html`.
 
 Handlebars syntax allows you to reference `AdComponentProperty`s within an `AdComponent`'s markup. `Ad`s share references to components, a deliberate design decision that preserves `AdComponentProperty` values when switching `Ad`s.
 
